@@ -7,7 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
- 
+
+import org.springframework.stereotype.Component;
+
 @Entity
 @Table(name = "ITEMS")
 public class Item { 
@@ -25,7 +27,10 @@ public class Item {
 	@Column(name = "inventorycode", nullable=false)
 	private String inventory_code;
  	
-	public Item() {}
+	public Item() {
+		Item item = new Item(10,"item",100,"abc");
+		System.out.println(item);
+	}
 	
 	public Item(int itemno, String name, int amount, String inventory_code){
 		this.itemno=itemno;

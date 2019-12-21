@@ -20,9 +20,7 @@ import com.service.ItemService;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @RestController
-@RequestMapping("/")
 @EnableSwagger2
-@CrossOrigin(origins = "http://localhost:4200")
 public class ItemController {
 	@Autowired
     private ItemService itemService;

@@ -34,10 +34,10 @@ public class ItemService {
 			throw new ResourceNotFoundException("item id's not found");
 		
 	}
-	
+
 	public void UpdateItem(Item item) {
 		itemRepository.save(item);
-		
+
 	}
 	
 	public void depositItem(Integer id, Integer amount) throws ResourceNotFoundException {
@@ -55,7 +55,7 @@ public class ItemService {
 		}
 	}
 	
-	public void withdrawItem(Integer id, Integer amount) throws ResourceNotFoundException {
+	public synchronized void withdrawItem(Integer id, Integer amount) throws ResourceNotFoundException {
 		try {
 			Item item = itemRepository.getOne(id);
 			int current = item.getAmount();
@@ -72,4 +72,6 @@ public class ItemService {
 			e.getMessage();
 		}	
 	}
+
+
 }
