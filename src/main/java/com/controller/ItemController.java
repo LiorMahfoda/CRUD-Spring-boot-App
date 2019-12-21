@@ -64,16 +64,16 @@ public class ItemController {
 	}
 	
 	/**
-	 * Removed - to not view in the Swagger controller
+	 *Removed - to not view in the Swagger controller
+	 **/
+	/**
 	 * @param item
 	 * Enable to update the entire object
 	 */
-	
-	//@PutMapping("/Items/{id}/updateItem")
+	@PutMapping("/Items/{id}/updateItem")
 	public void UpdateItem(@RequestBody Item item ) {
 		itemService.UpdateItem(item);
 	}
-	
 	
 	/**
 	 * This Method adds amount to a specific item(by id)

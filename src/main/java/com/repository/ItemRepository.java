@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import com.model.Item;
 
 @Repository
-@CrossOrigin(origins = "http://localhost:8080")
 public interface ItemRepository extends JpaRepository<Item, Integer>{
 
 }
